@@ -1,0 +1,67 @@
+<html>
+<head>
+  <style>
+    html, body {
+      background-color: #cfcfcf;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      background-color: white;
+      margin: 0 auto;
+    }
+    .hud {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      width: 300px;
+      padding: 1em 2em;
+      background-color: #efefef;
+      box-shadow: 0 0 1em rgba(0, 0, 0, .2);
+      border-radius: 5px;
+    }
+    select#colors, #export {
+      width: 9em;
+      height: 4em;
+      text-align: center;
+    }
+    select#colors option {
+      padding: 5px;
+    }
+    #export, #reset {
+      padding: 4px 8px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    #export[href] {
+      background-color: #0075ff;
+      border-color: #3365ef;
+      color: white;
+    }
+    #reset {
+      background-color: #ff3b00;
+      border-color: #d33f13;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canv" width="1280" height="920"></canvas>
+  <div class="hud">
+    <select id="colors"></select>
+    <p><span id="pcnt">0</span> point(s)</p>
+    <div>
+      <label for="bias">bias</label>
+      <input type="range" min="1" max="100" value="70" class="slider" id="bias">
+    </div>
+    <div>
+      <label for="dense">dense</label>
+      <input type="range" min="1" max="30" value="10" class="slider" id="dense">
+    </div>
+    <p><a id="export">export to csv</a></p>
+    <button id="reset">reset</button>
+  </div>
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
